@@ -20,21 +20,26 @@ class DialogBox extends StatelessWidget {
     
     return AlertDialog(
           content: Container(
-            height: 140,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            height: 190,
+            child: Column(  
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
+                Text("Task title"),
+
                 TextField(
                   controller: taskController,
                   decoration: InputDecoration(
-                    hintText: "Enter task",
+                    hintText: "Enter title here...",
                   ),
                 ),
+
+                Text("description"),
 
                 TextField(
                   controller: discriptionController,
                   decoration: InputDecoration(
-                    hintText: "Enter discription",
+                    hintText: "Enter description here...",
                   ),
                 ),
 

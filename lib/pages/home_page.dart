@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
 
   
   // Tap checkedBox fuction
-  void checkedBoxChanged(int index){
+  void checkedBoxChanged(bool? value,int index){
     setState(() {
       db.toDoList[index][2] =! db.toDoList[index][2];
     });
@@ -149,6 +149,7 @@ class _HomePageState extends State<HomePage> {
       ? Container(
         child: Center(child: Text("No tasks yet", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),)),
       )
+
       // if there are tasks
       :SlidableAutoCloseBehavior(
         child: ListView.builder(
@@ -159,7 +160,7 @@ class _HomePageState extends State<HomePage> {
               taskName: db.toDoList[index][0], 
               taskDifination: db.toDoList[index][1],
               isChecked: db.toDoList[index][2], 
-              tapCheckedBox: (value) => checkedBoxChanged(index), 
+              tapCheckedBox: (value) => checkedBoxChanged(value,index), 
               deleteFunction: (context) => deleteTask(index),
               editFunction: (context) => editOrCreateMenu(index), 
               

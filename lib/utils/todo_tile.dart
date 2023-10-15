@@ -51,17 +51,15 @@ class ToDoTile extends StatelessWidget {
           ]),
           
         child: Container(
-                
+    
                 height: 60,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(192, 255, 255, 255),
                   borderRadius: BorderRadius.circular(10),
                 ),
-    
-                child: Center(
                   child: ListTile(
                     leading: Checkbox(
-                              value:isChecked , 
+                              value: isChecked , 
                               onChanged: tapCheckedBox, 
                               activeColor: Colors.green,),
                     
@@ -71,7 +69,7 @@ class ToDoTile extends StatelessWidget {
                     
                     subtitle:Text(taskDifination) ,
                   ),
-                )
+                
 
               ),
       ),
